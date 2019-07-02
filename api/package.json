@@ -1,0 +1,27 @@
+{
+  "name": "teste-back-end-redfox",
+  "version": "1.0.0",
+  "description": "Back-end development for redfox test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "api",
+    "docker",
+    "mariaDB"
+  ],
+  "author": "Bruno Defante da Silva",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "knex": "^0.18.0",
+    "mysql": "^2.17.1",
+    "node-xlsx": "^0.15.0",
+    "nodemon": "^1.19.1"
+  }
+}

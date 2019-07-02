@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+
+  server:
+    image: node:10
+    ports:
+      - "3000:3000"
+    command: sh -c "npm install && npm run dev"
+    depends_on:
+      - mysql
+    working_dir: /app
+    volumes:
+      - ./api:/app
+      - ./api/storage:/storage
+    environment:
+      API_PORT: 3000
+      MARIA_PORT: 3306
+      MARIA_DATABASE_NAME: pokemon
+      MARIA_USERNAME: root
+      MARIA_PASSWORD: 
+      MARIA_ADDRESS: mysql
+
+  mysql:
+      image: mariadb:10.3
+      ports:
+        - "3306:3306"
+      environment:
+        MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+        MYSQL_ROOT_PASSWORD: ''
